@@ -1,4 +1,4 @@
-version: "3"
+version: "3.3"
 services:
   redis_1:
     image: redis
@@ -10,7 +10,7 @@ services:
       - ./config/redis_11.tmpl:/usr/local/etc/redis/redis_11.conf
     command: >
       bash -c "redis-server /usr/local/etc/redis/redis_1.conf
-      && redis-server /usr/local/etc/redis/redis_11.conf"
+      & redis-server /usr/local/etc/redis/redis_11.conf"
     networks:
       redis_net:
         ipv4_address: 10.10.10.11  
@@ -24,7 +24,7 @@ services:
       - ./config/redis_12.tmpl:/usr/local/etc/redis/redis_12.conf
     command: >
       bash -c "redis-server /usr/local/etc/redis/redis_2.conf
-      && redis-server /usr/local/etc/redis/redis_12.conf"
+      & redis-server /usr/local/etc/redis/redis_12.conf"
     networks:
       redis_net:
         ipv4_address: 10.10.10.12      
@@ -36,9 +36,9 @@ services:
     volumes:
       - ./config/redis_3.tmpl:/usr/local/etc/redis/redis_3.conf
       - ./config/redis_13.tmpl:/usr/local/etc/redis/redis_13.conf
-    command: 
-      - bash -c "redis-server /usr/local/etc/redis/redis_3.conf"
-      - bash -c "redis-server /usr/local/etc/redis/redis_13.conf"
+    command: >
+      bash -c "redis-server /usr/local/etc/redis/redis_3.conf
+      & redis-server /usr/local/etc/redis/redis_13.conf"
     networks:
       redis_net:
         ipv4_address: 10.10.10.13    
