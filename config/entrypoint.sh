@@ -15,9 +15,9 @@ echo "yes" | redis-cli --cluster create \
   10.10.10.11:7001 \
   10.10.10.12:7002 \
   10.10.10.13:7003 \
-  10.10.10.13:7013 \
   10.10.10.11:7011 \
   10.10.10.12:7012 \
+  10.10.10.13:7013 \
   --cluster-replicas 1
 
 echo "Redis cluster ready"
